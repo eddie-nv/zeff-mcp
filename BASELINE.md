@@ -2,6 +2,22 @@
 
 Append-only log. Each milestone that runs an eval records its numbers here.
 
+## M8 — Pantry computation (2026-05-02)
+
+**Dataset:** `evals/datasets/pantry_scenarios.jsonl` (16 hand-crafted scenarios)
+**Run:** `python -m evals.runners.run_pantry_eval`
+
+| Metric    | Value | Threshold |
+|-----------|------:|----------:|
+| Pass rate | 1.000 |     ≥0.95 |
+
+Scenarios cover: not-yet-expired, just-expired, no-decay (long-lived),
+default storage mode picks (refrigerated > pantry > frozen), multiple
+acquisitions of the same food, mixed baskets, user isolation, empty
+pantry, and shelf-life differences (fuji vs honeycrisp).
+
+---
+
 ## M7 — Taxonomy with composites (2026-05-02)
 
 **Dataset:** 126 entries (116 primitives + 10 composites)
