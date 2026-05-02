@@ -40,3 +40,24 @@
 {"query": "apple", "expected_top_k": ["honeycrisp_apple", "fuji_apple"], "k": 3, "tag": "ambiguous"}
 {"query": "chicken", "expected_top_k": ["chicken_breast_raw", "chicken_whole_raw", "chicken_leg_raw"], "k": 5, "tag": "ambiguous"}
 {"query": "xyzzy_no_match", "expected_top_k": [], "k": 3, "tag": "no_match"}
+{"query": "arugula", "expected_top_k": ["arugula_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "garlic", "expected_top_k": ["garlic_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "jackfruit", "expected_top_k": ["jackfruit_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "plums", "expected_top_k": ["plums_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "longans", "expected_top_k": ["longans_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "taro", "expected_top_k": ["taro_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "lemon juice", "expected_top_k": ["lemon_juice_raw"], "k": 3, "tag": "usda_compound"}
+{"query": "ginger root", "expected_top_k": ["ginger_root_raw"], "k": 3, "tag": "usda_compound"}
+{"query": "cheese cheshire", "expected_top_k": ["cheese_cheshire"], "k": 3, "tag": "usda_compound"}
+{"query": "cheshire cheese", "expected_top_k": ["cheese_cheshire"], "k": 3, "tag": "usda_word_order"}
+{"query": "edam", "expected_top_k": ["cheese_edam"], "k": 3, "tag": "usda_alt"}
+{"query": "mace", "expected_top_k": ["spices_mace_ground"], "k": 3, "tag": "usda_alt"}
+{"query": "snail", "expected_top_k": ["mollusks_snail_raw"], "k": 3, "tag": "usda_alt"}
+{"query": "guinea hen", "expected_top_k": ["guinea_hen_meat_only_raw"], "k": 3, "tag": "usda_compound"}
+{"query": "peanuts", "expected_top_k": ["peanuts_virginia_raw"], "k": 3, "tag": "usda_exact"}
+{"query": "soy flour", "expected_top_k": ["soy_flour_low_fat"], "k": 3, "tag": "usda_compound"}
+{"query": "veal loin", "expected_top_k": ["veal_loin_separable_lean_and_fat_raw"], "k": 3, "tag": "usda_compound"}
+{"query": "goat", "expected_top_k": ["game_meat_goat_raw"], "k": 3, "tag": "usda_alt"}
+{"query": "corned beef", "expected_top_k": ["beef_cured_corned_beef_brisket_cooked"], "k": 3, "tag": "usda_alt"}
+{"query": "ostrich", "expected_top_k": ["ostrich_fan_raw"], "k": 3, "tag": "usda_partial"}
+
