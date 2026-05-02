@@ -2,7 +2,18 @@
 
 Append-only log. Each milestone that runs an eval records its numbers here.
 
-## M8 — Pantry computation (2026-05-02)
+## M9 — Consumption history (2026-05-02)
+
+No new eval runner — coverage is exclusively via integration tests:
+20 unit-of-record tests on `domain.history.get_consumption_history`
+and 9 MCP-wrapper tests. All four `group_by` paths (none, day, category,
+nova_group), time-range parsing, user isolation, and invalid input
+handled.
+
+All 6 v1 MCP tools live: search_foods, get_food, browse_category,
+get_food_components, get_pantry_state, get_consumption_history.
+
+---
 
 **Dataset:** `evals/datasets/pantry_scenarios.jsonl` (16 hand-crafted scenarios)
 **Run:** `python -m evals.runners.run_pantry_eval`

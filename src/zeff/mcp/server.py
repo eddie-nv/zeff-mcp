@@ -47,6 +47,9 @@ def register_tools(server: FastMCP) -> None:
     easily fork this function.
     """
     from zeff.mcp.tools.browse_category import register as register_browse_category
+    from zeff.mcp.tools.get_consumption_history import (
+        register as register_get_consumption_history,
+    )
     from zeff.mcp.tools.get_food import register as register_get_food
     from zeff.mcp.tools.get_food_components import register as register_get_food_components
     from zeff.mcp.tools.get_pantry_state import register as register_get_pantry_state
@@ -57,6 +60,7 @@ def register_tools(server: FastMCP) -> None:
     register_browse_category(server)
     register_get_food_components(server)
     register_get_pantry_state(server)
+    register_get_consumption_history(server)
 
 
 async def _amain() -> None:
