@@ -24,4 +24,4 @@ def get_settings() -> Settings:
 
     Not cached so tests can mutate the environment between calls.
     """
-    return Settings()  # type: ignore[call-arg]
+    return Settings()

@@ -50,9 +50,7 @@ class Node(Base):
         ForeignKey("nodes.id", ondelete="RESTRICT"),
         nullable=True,
     )
-    status: Mapped[str] = mapped_column(
-        Text, nullable=False, server_default=text("'active'")
-    )
+    status: Mapped[str] = mapped_column(Text, nullable=False, server_default=text("'active'"))
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
@@ -70,9 +68,7 @@ class NodeFacet(Base):
     __table_args__ = (
         PrimaryKeyConstraint("node_id", "facet_key"),
         CheckConstraint(
-            "facet_key IN ("
-            "'decay','nova_group','dietary_flags','allergens','requires_cooking'"
-            ")",
+            "facet_key IN ('decay','nova_group','dietary_flags','allergens','requires_cooking')",
             name="node_facets_key_check",
         ),
     )

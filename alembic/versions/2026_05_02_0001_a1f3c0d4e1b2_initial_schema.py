@@ -71,11 +71,21 @@ def upgrade() -> None:
     )
 
     # Stored generated column for trigram search across array elements.
-    # M2 search must query this column directly, not array_to_string(alt_labels, ' ').
+    # `array_to_string` is not marked IMMUTABLE in Postgres, so we wrap it in
+    # an IMMUTABLE SQL function — the result IS deterministic for a fixed
+    # separator. M2 search must query alt_labels_text directly, not call the
+    # function inline.
+    op.execute(
+        """
+        CREATE FUNCTION immutable_array_to_text(arr text[]) RETURNS text
+        LANGUAGE sql IMMUTABLE STRICT PARALLEL SAFE AS
+        $$ SELECT array_to_string(arr, ' ') $$
+        """
+    )
     op.execute(
         "ALTER TABLE nodes "
         "ADD COLUMN alt_labels_text TEXT "
-        "GENERATED ALWAYS AS (array_to_string(alt_labels, ' ')) STORED"
+        "GENERATED ALWAYS AS (immutable_array_to_text(alt_labels)) STORED"
     )
 
     # Trigger to keep updated_at in sync on every row update.
@@ -159,3 +169,4 @@ def downgrade() -> None:
     op.execute("DROP TRIGGER IF EXISTS nodes_set_updated_at ON nodes")
     op.execute("DROP FUNCTION IF EXISTS set_updated_at()")
     op.drop_table("nodes")
+    op.execute("DROP FUNCTION IF EXISTS immutable_array_to_text(text[])")
