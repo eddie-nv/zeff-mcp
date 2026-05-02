@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zeff"
+version = "0.0.1"
+description = "Curated food taxonomy exposed as an MCP server."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Zeff" }]
+dependencies = [
+    "mcp>=1.0.0",
+    "psycopg[binary]>=3.2",
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "fastapi>=0.110",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-postgresql>=6.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "types-psycopg2",
+]
+
+[project.scripts]
+zeff-mcp = "zeff.mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zeff"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM", "N"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+mypy_path = "src"
+packages = ["zeff"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["pytest_postgresql.*", "mcp.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+asyncio_mode = "auto"
+markers = [
+    "integration: tests that require a running Postgres",
+]
+
+[tool.coverage.run]
+source = ["src/zeff"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
