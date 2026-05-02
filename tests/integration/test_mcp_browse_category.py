@@ -94,51 +94,37 @@ class TestSchema:
     async def test_input_schema(self, server_and_seed) -> None:
         tool = next(t for t in await server_and_seed.list_tools() if t.name == "browse_category")
         props = tool.inputSchema["properties"]
-        assert "category_node_id" in props
-        assert "max_depth" in props
+        assert "node_id" in props
+        # max_depth was removed in M6 cross-tool review (was accepted but ignored).
+        assert "max_depth" not in props
 
 
 class TestCallTool:
     async def test_lists_immediate_children(self, server_and_seed) -> None:
         payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"category_node_id": "food"})
+            await server_and_seed.call_tool("browse_category", {"node_id": "food"})
         )
         assert payload["category"]["node_id"] == "food"
         assert payload["category"]["pref_label"] == "Food"
         ids = sorted(c["node_id"] for c in payload["children"])
         assert ids == ["fruit", "vegetable"]
 
-    async def test_child_count_includes_grandchildren_when_max_depth_default(
-        self, server_and_seed
-    ) -> None:
-        # At default max_depth=2 from `food`, the immediate children are fruit/vegetable.
-        # Their child_count should reflect THEIR direct children (fruit→2, vegetable→1).
-        payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"category_node_id": "food"})
-        )
+    async def test_child_count_reflects_direct_children(self, server_and_seed) -> None:
+        # child_count is each child's own direct-child count.
+        payload = _decode(await server_and_seed.call_tool("browse_category", {"node_id": "food"}))
         by_id = {c["node_id"]: c for c in payload["children"]}
         assert by_id["fruit"]["child_count"] == 2  # apple, banana
         assert by_id["vegetable"]["child_count"] == 1  # spinach
 
-    async def test_max_depth_one_returns_only_immediate(self, server_and_seed) -> None:
-        payload = _decode(
-            await server_and_seed.call_tool(
-                "browse_category", {"category_node_id": "food", "max_depth": 1}
-            )
-        )
-        # max_depth=1 still returns immediate children but child_count is just direct.
-        ids = sorted(c["node_id"] for c in payload["children"])
-        assert ids == ["fruit", "vegetable"]
-
     async def test_leaf_category_returns_empty_children(self, server_and_seed) -> None:
         payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"category_node_id": "banana"})
+            await server_and_seed.call_tool("browse_category", {"node_id": "banana"})
         )
         assert payload["children"] == []
 
     async def test_returns_type_per_child(self, server_and_seed) -> None:
         payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"category_node_id": "apple"})
+            await server_and_seed.call_tool("browse_category", {"node_id": "apple"})
         )
         for c in payload["children"]:
             assert c["type"] == "primitive"
@@ -148,13 +134,13 @@ class TestCallTool:
 
         with pytest.raises(ToolError, match="does_not_exist"):
             await server_and_seed.call_tool(
-                "browse_category", {"category_node_id": "does_not_exist"}
+                "browse_category", {"node_id": "does_not_exist"}
             )
 
     async def test_non_category_node_works(self, server_and_seed) -> None:
         # Browsing a primitive node returns it with empty children.
         payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"category_node_id": "spinach"})
+            await server_and_seed.call_tool("browse_category", {"node_id": "spinach"})
         )
         assert payload["category"]["node_id"] == "spinach"
         assert payload["children"] == []

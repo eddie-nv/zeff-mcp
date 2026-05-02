@@ -100,24 +100,15 @@ def register(server: FastMCP) -> None:
 
     @server.tool(name=TOOL_NAME, title=TOOL_TITLE, description=TOOL_DESCRIPTION)
     async def browse_category_tool(
-        category_node_id: Annotated[
+        node_id: Annotated[
             str,
-            Field(description="Slugified node id of a category, e.g. 'fruit' or 'protein'."),
-        ],
-        max_depth: Annotated[
-            int,
             Field(
-                default=2,
-                ge=1,
-                le=4,
                 description=(
-                    "Reserved for future deep-walk support. Currently the "
-                    "tool always returns immediate children only; child_count "
-                    "tells you whether each child has further descendants."
-                ),
+                    "Slugified node id, typically a category like 'fruit' or "
+                    "'protein'. Passing a primitive returns it with empty children."
+                )
             ),
-        ] = 2,
+        ],
     ) -> CategoryView:
-        del max_depth  # accepted but ignored for v1
         async with db_conn.session_scope() as session:
-            return await _browse(session, category_node_id)
+            return await _browse(session, node_id)
