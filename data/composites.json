@@ -1,0 +1,163 @@
+{
+  "ensure_primitives": [
+    {"id": "mozzarella_part_skim", "pref_label": "Mozzarella (Part-Skim)", "parent_id": "cheese", "alt_labels": ["mozzarella", "part-skim mozzarella"]},
+    {"id": "cheddar_cheese", "pref_label": "Cheddar Cheese", "parent_id": "cheese", "alt_labels": ["cheddar", "sharp cheddar"]},
+    {"id": "parmesan_cheese", "pref_label": "Parmesan Cheese", "parent_id": "cheese", "alt_labels": ["parmesan", "parmigiano reggiano"]},
+    {"id": "ricotta_cheese", "pref_label": "Ricotta Cheese", "parent_id": "cheese", "alt_labels": ["ricotta"]},
+    {"id": "butter", "pref_label": "Butter", "parent_id": "milk_product", "alt_labels": ["unsalted butter", "salted butter"]},
+    {"id": "milk_whole", "pref_label": "Milk (Whole)", "parent_id": "milk_product", "alt_labels": ["whole milk", "3.25% milk"]},
+    {"id": "tomato_raw", "pref_label": "Tomato", "parent_id": "vegetable", "alt_labels": ["tomatoes", "fresh tomato"]},
+    {"id": "tomato_sauce", "pref_label": "Tomato Sauce", "parent_id": "vegetable", "alt_labels": ["pasta sauce", "marinara sauce"]},
+    {"id": "lettuce_romaine", "pref_label": "Romaine Lettuce", "parent_id": "vegetable", "alt_labels": ["romaine", "cos lettuce"]},
+    {"id": "tuna_canned", "pref_label": "Canned Tuna", "parent_id": "seafood", "alt_labels": ["tuna in water", "chunk light tuna"]},
+    {"id": "ground_beef_lean", "pref_label": "Ground Beef (Lean)", "parent_id": "red_meat", "alt_labels": ["lean ground beef", "85/15 ground beef"]},
+    {"id": "bread_white", "pref_label": "White Bread", "parent_id": "refined_grain", "alt_labels": ["white bread slice", "sandwich bread"]},
+    {"id": "pasta_lasagna_dry", "pref_label": "Lasagna Pasta (Dry)", "parent_id": "refined_grain", "alt_labels": ["lasagna noodles", "lasagne sheets"]},
+    {"id": "pasta_spaghetti_dry", "pref_label": "Spaghetti (Dry)", "parent_id": "refined_grain", "alt_labels": ["spaghetti", "dry spaghetti"]},
+    {"id": "pasta_macaroni_dry", "pref_label": "Macaroni (Dry)", "parent_id": "refined_grain", "alt_labels": ["elbow macaroni"]},
+    {"id": "egg_noodles_dry", "pref_label": "Egg Noodles (Dry)", "parent_id": "refined_grain", "alt_labels": ["egg noodles"]},
+    {"id": "pizza_dough", "pref_label": "Pizza Dough", "parent_id": "refined_grain", "alt_labels": ["pizza crust"]},
+    {"id": "tortilla_flour", "pref_label": "Flour Tortilla", "parent_id": "refined_grain", "alt_labels": ["tortilla", "wheat tortilla"]},
+    {"id": "croutons", "pref_label": "Croutons", "parent_id": "refined_grain", "alt_labels": ["bread croutons"]},
+    {"id": "caesar_dressing", "pref_label": "Caesar Dressing", "parent_id": "fat_and_oil", "alt_labels": ["caesar salad dressing"]},
+    {"id": "olive_oil", "pref_label": "Olive Oil", "parent_id": "fat_and_oil", "alt_labels": ["extra virgin olive oil", "evoo"]},
+    {"id": "peanut_butter", "pref_label": "Peanut Butter", "parent_id": "plant_protein", "alt_labels": ["pb"]},
+    {"id": "grape_jelly", "pref_label": "Grape Jelly", "parent_id": "fruit", "alt_labels": ["grape jam", "concord grape jelly"]},
+    {"id": "chicken_breast_raw", "pref_label": "Chicken Breast (Raw)", "parent_id": "poultry", "alt_labels": ["chicken breast", "boneless skinless chicken breast"]},
+    {"id": "carrots_baby_raw", "pref_label": "Baby Carrots", "parent_id": "vegetable", "alt_labels": ["baby carrots", "carrots"]},
+    {"id": "celery_raw", "pref_label": "Celery (Raw)", "parent_id": "vegetable", "alt_labels": ["celery", "celery stalks"]},
+    {"id": "salt", "pref_label": "Salt", "parent_id": "seasoning", "alt_labels": ["table salt", "sea salt", "kosher salt"]},
+    {"id": "garlic_raw", "pref_label": "Garlic (Raw)", "parent_id": "vegetable", "alt_labels": ["garlic", "garlic cloves"]},
+    {"id": "basil_fresh", "pref_label": "Basil (Fresh)", "parent_id": "vegetable", "alt_labels": ["fresh basil", "sweet basil"]}
+  ],
+  "composites": [
+    {
+      "id": "frozen_cheese_pizza",
+      "pref_label": "Frozen Cheese Pizza",
+      "parent_id": "food",
+      "alt_labels": ["frozen pizza", "cheese pizza"],
+      "facets": {"nova_group": 4, "decay": {"frozen_days": 240, "refrigerated_days": 3}, "requires_cooking": true},
+      "components": [
+        {"node_id": "mozzarella_part_skim", "grams_per_serving": 60, "is_primary": true, "position": 0},
+        {"node_id": "tomato_sauce", "grams_per_serving": 50, "position": 1},
+        {"node_id": "pizza_dough", "grams_per_serving": 110, "position": 2}
+      ]
+    },
+    {
+      "id": "frozen_lasagna",
+      "pref_label": "Frozen Lasagna",
+      "parent_id": "food",
+      "alt_labels": ["lasagna", "meat lasagna"],
+      "facets": {"nova_group": 4, "decay": {"frozen_days": 240, "refrigerated_days": 3}, "requires_cooking": true},
+      "components": [
+        {"node_id": "pasta_lasagna_dry", "grams_per_serving": 70, "position": 0},
+        {"node_id": "ground_beef_lean", "grams_per_serving": 80, "is_primary": true, "position": 1},
+        {"node_id": "tomato_sauce", "grams_per_serving": 90, "position": 2},
+        {"node_id": "mozzarella_part_skim", "grams_per_serving": 40, "position": 3},
+        {"node_id": "ricotta_cheese", "grams_per_serving": 35, "position": 4}
+      ]
+    },
+    {
+      "id": "canned_chicken_soup",
+      "pref_label": "Canned Chicken Noodle Soup",
+      "parent_id": "food",
+      "alt_labels": ["chicken noodle soup", "campbell's chicken noodle"],
+      "facets": {"nova_group": 4, "decay": {"pantry_days": 730, "opened_days": 4}, "requires_cooking": false},
+      "components": [
+        {"node_id": "chicken_breast_raw", "grams_per_serving": 30, "is_primary": true, "position": 0},
+        {"node_id": "egg_noodles_dry", "grams_per_serving": 20, "position": 1},
+        {"node_id": "carrots_baby_raw", "grams_per_serving": 15, "position": 2},
+        {"node_id": "celery_raw", "grams_per_serving": 10, "position": 3},
+        {"node_id": "salt", "grams_per_serving": 1, "position": 4}
+      ]
+    },
+    {
+      "id": "cheese_sandwich",
+      "pref_label": "Cheese Sandwich",
+      "parent_id": "food",
+      "alt_labels": ["grilled cheese", "cheese on bread"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 2}, "requires_cooking": false},
+      "components": [
+        {"node_id": "bread_white", "grams_per_serving": 56, "position": 0},
+        {"node_id": "cheddar_cheese", "grams_per_serving": 30, "is_primary": true, "position": 1},
+        {"node_id": "butter", "grams_per_serving": 10, "position": 2}
+      ]
+    },
+    {
+      "id": "peanut_butter_jelly_sandwich",
+      "pref_label": "Peanut Butter and Jelly Sandwich",
+      "parent_id": "food",
+      "alt_labels": ["pbj", "pb&j", "pb and j"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 2, "pantry_days": 1}, "requires_cooking": false},
+      "components": [
+        {"node_id": "bread_white", "grams_per_serving": 56, "position": 0},
+        {"node_id": "peanut_butter", "grams_per_serving": 32, "is_primary": true, "position": 1},
+        {"node_id": "grape_jelly", "grams_per_serving": 20, "position": 2}
+      ]
+    },
+    {
+      "id": "caesar_salad",
+      "pref_label": "Caesar Salad",
+      "parent_id": "food",
+      "alt_labels": ["caesar"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 2}, "requires_cooking": false},
+      "components": [
+        {"node_id": "lettuce_romaine", "grams_per_serving": 100, "is_primary": true, "position": 0},
+        {"node_id": "parmesan_cheese", "grams_per_serving": 15, "position": 1},
+        {"node_id": "croutons", "grams_per_serving": 20, "position": 2},
+        {"node_id": "caesar_dressing", "grams_per_serving": 30, "position": 3}
+      ]
+    },
+    {
+      "id": "spaghetti_marinara",
+      "pref_label": "Spaghetti Marinara",
+      "parent_id": "food",
+      "alt_labels": ["pasta marinara", "spaghetti with tomato sauce"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 4}, "requires_cooking": false},
+      "components": [
+        {"node_id": "pasta_spaghetti_dry", "grams_per_serving": 100, "is_primary": true, "position": 0},
+        {"node_id": "tomato_sauce", "grams_per_serving": 120, "position": 1},
+        {"node_id": "garlic_raw", "grams_per_serving": 5, "position": 2},
+        {"node_id": "olive_oil", "grams_per_serving": 10, "position": 3},
+        {"node_id": "basil_fresh", "grams_per_serving": 2, "position": 4}
+      ]
+    },
+    {
+      "id": "tuna_melt",
+      "pref_label": "Tuna Melt",
+      "parent_id": "food",
+      "alt_labels": ["tuna sandwich", "open-faced tuna melt"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 1}, "requires_cooking": false},
+      "components": [
+        {"node_id": "bread_white", "grams_per_serving": 56, "position": 0},
+        {"node_id": "tuna_canned", "grams_per_serving": 85, "is_primary": true, "position": 1},
+        {"node_id": "cheddar_cheese", "grams_per_serving": 30, "position": 2}
+      ]
+    },
+    {
+      "id": "chicken_quesadilla",
+      "pref_label": "Chicken Quesadilla",
+      "parent_id": "food",
+      "alt_labels": ["quesadilla"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 3, "frozen_days": 90}, "requires_cooking": true},
+      "components": [
+        {"node_id": "tortilla_flour", "grams_per_serving": 60, "position": 0},
+        {"node_id": "chicken_breast_raw", "grams_per_serving": 70, "is_primary": true, "position": 1},
+        {"node_id": "cheddar_cheese", "grams_per_serving": 30, "position": 2}
+      ]
+    },
+    {
+      "id": "macaroni_and_cheese",
+      "pref_label": "Macaroni and Cheese",
+      "parent_id": "food",
+      "alt_labels": ["mac and cheese", "mac n cheese"],
+      "facets": {"nova_group": 3, "decay": {"refrigerated_days": 4}, "requires_cooking": false},
+      "components": [
+        {"node_id": "pasta_macaroni_dry", "grams_per_serving": 90, "position": 0},
+        {"node_id": "cheddar_cheese", "grams_per_serving": 50, "is_primary": true, "position": 1},
+        {"node_id": "milk_whole", "grams_per_serving": 60, "position": 2},
+        {"node_id": "butter", "grams_per_serving": 15, "position": 3}
+      ]
+    }
+  ]
+}

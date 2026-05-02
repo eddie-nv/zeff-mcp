@@ -36,9 +36,10 @@ downgrade: ## Roll back one migration
 revision: ## Create a new alembic revision: `make revision m="add x table"`
 	$(ALEMBIC) revision -m "$(m)"
 
-seed: ## Run all seeds in order (canonical, USDA, facets)
+seed: ## Run all seeds in order (canonical, USDA, composites, facets)
 	$(PY) -m zeff.seeds.canonical
 	$(PY) -m zeff.seeds.usda_sr
+	$(PY) -m zeff.seeds.composites
 	$(PY) -m zeff.seeds.facets
 
 seed-canonical: ## Seed only the canonical category tree
@@ -46,6 +47,9 @@ seed-canonical: ## Seed only the canonical category tree
 
 seed-usda: ## Seed only the USDA SR Legacy primitives
 	$(PY) -m zeff.seeds.usda_sr
+
+seed-composites: ## Seed the hand-curated composites
+	$(PY) -m zeff.seeds.composites
 
 seed-facets: ## Compute and upsert facets for every primitive
 	$(PY) -m zeff.seeds.facets
