@@ -25,9 +25,11 @@ from typing import Any, TypedDict
 
 from sqlalchemy import select
 
+from evals.runners.eval_seed import seed_reference_foods
 from zeff.config import get_settings
 from zeff.db import connection as db_conn
 from zeff.db.models import Node, NodeFacet
+from zeff.seeds.facets import seed_facets
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATASET = REPO_ROOT / "evals" / "datasets" / "taxonomy_truth.jsonl"
@@ -155,6 +157,14 @@ async def _amain() -> int:
     db_conn.configure_engine(get_settings().database_url)
     entries = _load_dataset(DATASET)
     log.info("loaded %d truth entries", len(entries))
+
+    # Reference foods (the 11 from DESIGN.md) are part of the eval baseline
+    # but aren't in `make seed`. Upsert them + re-derive facets so the eval
+    # always runs against a complete-enough DB.
+    async with db_conn.session_scope() as session:
+        await seed_reference_foods(session)
+        await seed_facets(session)
+    log.info("eval seed (reference foods + facets) applied")
 
     async with db_conn.session_scope() as session:
         report = await _evaluate(session, entries)

@@ -114,3 +114,13 @@
 {"node_id": "tapioca_pearl_dry", "expected_parent": "refined_grain", "expected_facets": {"nova_group": 3, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": true}}
 {"node_id": "cornstarch", "expected_parent": "refined_grain", "expected_facets": {"nova_group": 3, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
 {"node_id": "eggnog", "expected_parent": "egg", "expected_facets": {"nova_group": 3, "dietary_flags": ["gluten_free", "vegetarian"], "allergens": ["egg", "milk"], "requires_cooking": false}}
+{"node_id": "frozen_cheese_pizza", "expected_parent": "food", "expected_facets": {"nova_group": 4, "decay": {"frozen_days": 240, "refrigerated_days": 3}, "requires_cooking": true}}
+{"node_id": "frozen_lasagna", "expected_parent": "food", "expected_facets": {"nova_group": 4, "decay": {"frozen_days": 240, "refrigerated_days": 3}, "requires_cooking": true}}
+{"node_id": "canned_chicken_soup", "expected_parent": "food", "expected_facets": {"nova_group": 4, "decay": {"pantry_days": 730, "opened_days": 4}, "requires_cooking": false}}
+{"node_id": "cheese_sandwich", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 2}, "requires_cooking": false}}
+{"node_id": "peanut_butter_jelly_sandwich", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 2, "pantry_days": 1}, "requires_cooking": false}}
+{"node_id": "caesar_salad", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 2}, "requires_cooking": false}}
+{"node_id": "spaghetti_marinara", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 4}, "requires_cooking": false}}
+{"node_id": "tuna_melt", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 1}, "requires_cooking": false}}
+{"node_id": "chicken_quesadilla", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 3, "frozen_days": 90}, "requires_cooking": true}}
+{"node_id": "macaroni_and_cheese", "expected_parent": "food", "expected_facets": {"nova_group": 3, "decay": {"refrigerated_days": 4}, "requires_cooking": false}}
