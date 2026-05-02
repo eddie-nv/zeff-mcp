@@ -2,6 +2,26 @@
 
 Append-only log. Each milestone that runs an eval records its numbers here.
 
+## M7 — Taxonomy with composites (2026-05-02)
+
+**Dataset:** 126 entries (116 primitives + 10 composites)
+**DB:** 19 categories + 515 primitives + 10 composites + 38 component edges + 5 facets per node
+**Run:** `make eval` or `python -m evals.runners.run_taxonomy_eval`
+
+| Metric            | Value | Threshold |
+|-------------------|------:|----------:|
+| Parent accuracy   | 1.000 |     1.000 |
+| Mean facet acc.   | 1.000 |    ≥0.950 |
+
+By facet: nova_group 126/126, requires_cooking 126/126, dietary_flags
+116/116, allergens 116/116, decay 21/21 (11 reference primitives + 10
+composites). Composite facets are hand-curated in `data/composites.json`.
+
+The taxonomy runner now pre-seeds reference foods + re-runs facets
+so the eval is self-contained vs the live DB after `make seed`.
+
+---
+
 ## M4 — Taxonomy correctness (2026-05-02)
 
 **Dataset:** `evals/datasets/taxonomy_truth.jsonl` (116 hand-curated entries)

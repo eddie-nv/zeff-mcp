@@ -74,6 +74,19 @@ Last run: 2026-05-02. All 5 passed.
 
 Last run: 2026-05-02. All 5 passed.
 
+## M7 — `get_food_components` smoke checks (2026-05-02)
+
+| `node_id`                      | Expected response                                              |
+|--------------------------------|----------------------------------------------------------------|
+| `frozen_cheese_pizza`          | composite=True, 3 comps, primary=`mozzarella_part_skim` (60g)  |
+| `frozen_lasagna`               | composite=True, 5 comps, primary=`ground_beef_lean` (80g)      |
+| `peanut_butter_jelly_sandwich` | composite=True, 3 comps, primary=`peanut_butter` (32g)         |
+| `salt`                         | composite=False, components=[]                                 |
+| `honeycrisp_apple`             | composite=False, components=[]                                 |
+| `<unknown>`                    | Raises `ToolError`                                             |
+
+Last run: 2026-05-02. All 6 passed.
+
 ## Failure modes to watch
 
 - **DB unavailable:** the server will start but every `search_foods` call
