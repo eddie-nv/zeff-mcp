@@ -1,0 +1,42 @@
+{"query": "honeycrisp apple", "expected_top_k": ["honeycrisp_apple"], "k": 3, "tag": "exact_label"}
+{"query": "Honeycrisp Apple", "expected_top_k": ["honeycrisp_apple"], "k": 3, "tag": "exact_case_insensitive"}
+{"query": "honeycrisp", "expected_top_k": ["honeycrisp_apple"], "k": 3, "tag": "alt_label"}
+{"query": "hc apple", "expected_top_k": ["honeycrisp_apple"], "k": 3, "tag": "abbreviation"}
+{"query": "fuji", "expected_top_k": ["fuji_apple"], "k": 3, "tag": "alt_label"}
+{"query": "fuji apple", "expected_top_k": ["fuji_apple"], "k": 3, "tag": "exact_label"}
+{"query": "spinach", "expected_top_k": ["spinach_raw"], "k": 3, "tag": "exact_label"}
+{"query": "baby spinach", "expected_top_k": ["spinach_raw"], "k": 3, "tag": "alt_label"}
+{"query": "spinch", "expected_top_k": ["spinach_raw"], "k": 3, "tag": "typo"}
+{"query": "spinach leaves", "expected_top_k": ["spinach_raw"], "k": 3, "tag": "alt_label"}
+{"query": "celery", "expected_top_k": ["celery_raw"], "k": 3, "tag": "exact_label"}
+{"query": "celery sticks", "expected_top_k": ["celery_raw"], "k": 3, "tag": "alt_label"}
+{"query": "potato", "expected_top_k": ["potato_raw"], "k": 3, "tag": "exact_label"}
+{"query": "potatoes", "expected_top_k": ["potato_raw"], "k": 3, "tag": "plural"}
+{"query": "white potato", "expected_top_k": ["potato_raw"], "k": 3, "tag": "alt_label"}
+{"query": "chicken breast", "expected_top_k": ["chicken_breast_raw"], "k": 3, "tag": "exact_label"}
+{"query": "boneless skinless chicken breast", "expected_top_k": ["chicken_breast_raw"], "k": 3, "tag": "alt_label"}
+{"query": "raw chicken breast", "expected_top_k": ["chicken_breast_raw"], "k": 3, "tag": "qualifier_word"}
+{"query": "whole chicken", "expected_top_k": ["chicken_whole_raw"], "k": 3, "tag": "alt_label"}
+{"query": "roaster", "expected_top_k": ["chicken_whole_raw"], "k": 3, "tag": "alt_label"}
+{"query": "fryer", "expected_top_k": ["chicken_whole_raw"], "k": 3, "tag": "alt_label"}
+{"query": "chicken legs", "expected_top_k": ["chicken_leg_raw"], "k": 3, "tag": "alt_label"}
+{"query": "drumstick", "expected_top_k": ["chicken_leg_raw"], "k": 3, "tag": "alt_label_partial"}
+{"query": "leg quarter", "expected_top_k": ["chicken_leg_raw"], "k": 3, "tag": "alt_label"}
+{"query": "salt", "expected_top_k": ["salt"], "k": 3, "tag": "exact_label"}
+{"query": "table salt", "expected_top_k": ["salt"], "k": 3, "tag": "alt_label"}
+{"query": "kosher salt", "expected_top_k": ["salt"], "k": 3, "tag": "alt_label"}
+{"query": "sodium chloride", "expected_top_k": ["salt"], "k": 3, "tag": "alt_label_scientific"}
+{"query": "sea salt", "expected_top_k": ["salt"], "k": 3, "tag": "alt_label"}
+{"query": "salmon", "expected_top_k": ["salmon_raw"], "k": 3, "tag": "exact_label"}
+{"query": "fresh salmon", "expected_top_k": ["salmon_raw"], "k": 3, "tag": "alt_label"}
+{"query": "salmon fillet", "expected_top_k": ["salmon_raw"], "k": 3, "tag": "alt_label"}
+{"query": "salmn", "expected_top_k": ["salmon_raw"], "k": 3, "tag": "typo"}
+{"query": "ny strip steak", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "exact_label"}
+{"query": "ny steak", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "alt_label"}
+{"query": "new york strip", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "alt_label"}
+{"query": "strip steak", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "alt_label"}
+{"query": "kansas city strip", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "regional_name"}
+{"query": "ambassador steak", "expected_top_k": ["ny_strip_steak_raw"], "k": 3, "tag": "regional_name"}
+{"query": "apple", "expected_top_k": ["honeycrisp_apple", "fuji_apple"], "k": 3, "tag": "ambiguous"}
+{"query": "chicken", "expected_top_k": ["chicken_breast_raw", "chicken_whole_raw", "chicken_leg_raw"], "k": 5, "tag": "ambiguous"}
+{"query": "xyzzy_no_match", "expected_top_k": [], "k": 3, "tag": "no_match"}
