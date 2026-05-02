@@ -101,9 +101,7 @@ class TestSchema:
 
 class TestCallTool:
     async def test_lists_immediate_children(self, server_and_seed) -> None:
-        payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"node_id": "food"})
-        )
+        payload = _decode(await server_and_seed.call_tool("browse_category", {"node_id": "food"}))
         assert payload["category"]["node_id"] == "food"
         assert payload["category"]["pref_label"] == "Food"
         ids = sorted(c["node_id"] for c in payload["children"])
@@ -117,15 +115,11 @@ class TestCallTool:
         assert by_id["vegetable"]["child_count"] == 1  # spinach
 
     async def test_leaf_category_returns_empty_children(self, server_and_seed) -> None:
-        payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"node_id": "banana"})
-        )
+        payload = _decode(await server_and_seed.call_tool("browse_category", {"node_id": "banana"}))
         assert payload["children"] == []
 
     async def test_returns_type_per_child(self, server_and_seed) -> None:
-        payload = _decode(
-            await server_and_seed.call_tool("browse_category", {"node_id": "apple"})
-        )
+        payload = _decode(await server_and_seed.call_tool("browse_category", {"node_id": "apple"}))
         for c in payload["children"]:
             assert c["type"] == "primitive"
 
@@ -133,9 +127,7 @@ class TestCallTool:
         from mcp.server.fastmcp.exceptions import ToolError
 
         with pytest.raises(ToolError, match="does_not_exist"):
-            await server_and_seed.call_tool(
-                "browse_category", {"node_id": "does_not_exist"}
-            )
+            await server_and_seed.call_tool("browse_category", {"node_id": "does_not_exist"})
 
     async def test_non_category_node_works(self, server_and_seed) -> None:
         # Browsing a primitive node returns it with empty children.

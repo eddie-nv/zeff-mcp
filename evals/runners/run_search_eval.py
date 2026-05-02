@@ -92,9 +92,7 @@ async def _run_one_via_mcp(server, case: EvalCase) -> dict:
     import json as _json
 
     k = case["k"]
-    envelope = await server.call_tool(
-        "search_foods", {"query": case["query"], "limit": k}
-    )
+    envelope = await server.call_tool("search_foods", {"query": case["query"], "limit": k})
     payload: dict | None = None
     if isinstance(envelope, tuple):
         for part in reversed(envelope):
