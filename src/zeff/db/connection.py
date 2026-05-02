@@ -37,17 +37,11 @@ def _to_async_url(url: str) -> str:
 def configure_engine(database_url: str, *, echo: bool = False) -> None:
     """Build (or rebuild) the engine and session factory for a given DSN.
 
-    Used by tests with `pytest-postgresql` to point at an ephemeral DB.
+    Tests call this to point at an ephemeral DB. Any prior engine is dropped
+    and left to GC — explicit disposal would require an awaitable, but
+    callers may invoke configure_engine from sync code (e.g. CLI entry).
     """
     global _engine, _session_factory
-    if _engine is not None:
-        # Schedule disposal; safe to ignore if no loop is running yet.
-        try:
-            import asyncio
-
-            asyncio.get_event_loop().run_until_complete(_engine.dispose())
-        except RuntimeError:
-            pass
     _engine = create_async_engine(_to_async_url(database_url), echo=echo, future=True)
     _session_factory = async_sessionmaker(_engine, expire_on_commit=False)
 

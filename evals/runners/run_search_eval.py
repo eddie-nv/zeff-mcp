@@ -12,6 +12,7 @@ Per case:
 CLI:
     python -m evals.runners.run_search_eval
     python -m evals.runners.run_search_eval --no-seed   # skip eval seed
+    python -m evals.runners.run_search_eval --via-mcp   # call through MCP tool layer
 """
 
 from __future__ import annotations
@@ -86,7 +87,41 @@ async def _run_one(session, case: EvalCase) -> dict:
     }
 
 
-async def _amain(seed: bool) -> int:
+async def _run_one_via_mcp(server, case: EvalCase) -> dict:
+    """Same as _run_one but goes through the MCP tool wrapper."""
+    import json as _json
+
+    k = case["k"]
+    envelope = await server.call_tool(
+        "search_foods", {"query": case["query"], "limit": k}
+    )
+    payload: dict | None = None
+    if isinstance(envelope, tuple):
+        for part in reversed(envelope):
+            if isinstance(part, dict):
+                payload = part
+                break
+            if isinstance(part, list) and part and hasattr(part[0], "text"):
+                payload = _json.loads(part[0].text)
+                break
+    elif isinstance(envelope, dict):
+        payload = envelope
+    if payload is None:
+        raise AssertionError(f"unrecognized MCP envelope shape: {envelope!r}")
+
+    got_ids = [r["node_id"] for r in payload.get("results", [])]
+    return {
+        "query": case["query"],
+        "tag": case["tag"],
+        "expected": case["expected_top_k"],
+        "got": got_ids,
+        "recall_at_k": _recall_at_k(case["expected_top_k"], got_ids),
+        "reciprocal_rank": _reciprocal_rank(case["expected_top_k"], got_ids),
+        "passed": _recall_at_k(case["expected_top_k"], got_ids) == 1.0,
+    }
+
+
+async def _amain(seed: bool, via_mcp: bool) -> int:
     logging.basicConfig(level="INFO")
     db_conn.configure_engine(get_settings().database_url)
 
@@ -99,9 +134,16 @@ async def _amain(seed: bool) -> int:
         log.info("eval seed applied")
 
     per_case: list[dict] = []
-    async with db_conn.session_scope() as session:
+    if via_mcp:
+        from zeff.mcp.server import build_server
+
+        server = build_server()
         for case in cases:
-            per_case.append(await _run_one(session, case))
+            per_case.append(await _run_one_via_mcp(server, case))
+    else:
+        async with db_conn.session_scope() as session:
+            for case in cases:
+                per_case.append(await _run_one(session, case))
 
     n = len(per_case)
     pass_count = sum(1 for r in per_case if r["passed"])
@@ -157,8 +199,15 @@ async def _amain(seed: bool) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-seed", dest="seed", action="store_false", default=True)
+    parser.add_argument(
+        "--via-mcp",
+        dest="via_mcp",
+        action="store_true",
+        default=False,
+        help="Call search through the MCP tool wrapper (parity check).",
+    )
     args = parser.parse_args()
-    return asyncio.run(_amain(seed=args.seed))
+    return asyncio.run(_amain(seed=args.seed, via_mcp=args.via_mcp))
 
 
 if __name__ == "__main__":
