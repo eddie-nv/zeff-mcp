@@ -117,7 +117,10 @@ async def db_session(_migrated_dsn: tuple[str, str]) -> AsyncIterator[AsyncSessi
 
     async with db_conn.get_engine().begin() as conn:
         await conn.execute(
-            text("TRUNCATE TABLE node_facets, node_external_ids, nodes RESTART IDENTITY CASCADE")
+            text(
+                "TRUNCATE TABLE node_components, node_facets, node_external_ids, nodes "
+                "RESTART IDENTITY CASCADE"
+            )
         )
 
     session = factory()

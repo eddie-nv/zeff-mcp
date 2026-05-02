@@ -11,9 +11,12 @@ from typing import Any
 
 from sqlalchemy import (
     ARRAY,
+    Boolean,
     CheckConstraint,
     DateTime,
+    Float,
     ForeignKey,
+    Integer,
     PrimaryKeyConstraint,
     String,
     Text,
@@ -93,3 +96,28 @@ class NodeExternalId(Base):
     )
     source: Mapped[str] = mapped_column(String(64), nullable=False)
     external_id: Mapped[str] = mapped_column(Text, nullable=False)
+
+
+class NodeComponent(Base):
+    __tablename__ = "node_components"
+    __table_args__ = (
+        PrimaryKeyConstraint("composite_id", "component_id"),
+        CheckConstraint(
+            "grams_per_serving IS NULL OR grams_per_serving >= 0",
+            name="node_components_grams_check",
+        ),
+    )
+
+    composite_id: Mapped[str] = mapped_column(
+        Text,
+        ForeignKey("nodes.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    component_id: Mapped[str] = mapped_column(
+        Text,
+        ForeignKey("nodes.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+    grams_per_serving: Mapped[float | None] = mapped_column(Float, nullable=True)
+    position: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
+    is_primary: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=text("false"))

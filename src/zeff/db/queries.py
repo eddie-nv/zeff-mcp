@@ -17,6 +17,7 @@ from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from zeff.db.models import Node as NodeRow
+from zeff.db.models import NodeComponent as ComponentRow
 from zeff.db.models import NodeExternalId as ExternalIdRow
 from zeff.db.models import NodeFacet as FacetRow
 from zeff.domain.facets import FacetKey, validate_facet
@@ -77,3 +78,36 @@ async def add_external_id(
 async def delete_node(session: AsyncSession, node_id: str) -> None:
     """Delete a node. CASCADE removes facets and external IDs."""
     await session.execute(delete(NodeRow).where(NodeRow.id == node_id))
+
+
+async def add_component(
+    session: AsyncSession,
+    composite_id: str,
+    component_id: str,
+    *,
+    grams_per_serving: float | None = None,
+    position: int = 0,
+    is_primary: bool = False,
+) -> None:
+    """Attach a component to a composite. FK validity is checked at commit."""
+    session.add(
+        ComponentRow(
+            composite_id=composite_id,
+            component_id=component_id,
+            grams_per_serving=grams_per_serving,
+            position=position,
+            is_primary=is_primary,
+        )
+    )
+
+
+async def get_components(session: AsyncSession, composite_id: str) -> list[ComponentRow]:
+    """Return component rows for a composite, ordered by position then id."""
+    rows = (
+        await session.execute(
+            select(ComponentRow)
+            .where(ComponentRow.composite_id == composite_id)
+            .order_by(ComponentRow.position, ComponentRow.component_id)
+        )
+    ).scalars()
+    return list(rows)
