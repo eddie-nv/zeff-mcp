@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-05-02T15:05:43.341491+00:00",
+  "n_scenarios": 16,
+  "pass_count": 16,
+  "pass_rate": 1.0,
+  "thresholds": {
+    "pass_rate": 0.95
+  },
+  "cases": [
+    {
+      "name": "fresh_apples",
+      "expected": {
+        "honeycrisp_apple": 1
+      },
+      "actual": {
+        "honeycrisp_apple": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "spinach_just_expired",
+      "expected": {},
+      "actual": {},
+      "passed": true
+    },
+    {
+      "name": "spinach_one_day_left",
+      "expected": {
+        "spinach_raw": 1
+      },
+      "actual": {
+        "spinach_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "salt_lasts_years",
+      "expected": {
+        "salt": 1
+      },
+      "actual": {
+        "salt": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "chicken_breast_2_day_window",
+      "expected": {
+        "chicken_breast_raw": 1
+      },
+      "actual": {
+        "chicken_breast_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "chicken_breast_expired",
+      "expected": {},
+      "actual": {},
+      "passed": true
+    },
+    {
+      "name": "salmon_fresh",
+      "expected": {
+        "salmon_raw": 1
+      },
+      "actual": {
+        "salmon_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "two_apples_one_old",
+      "expected": {
+        "honeycrisp_apple": 1
+      },
+      "actual": {
+        "honeycrisp_apple": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "two_apples_both_fresh",
+      "expected": {
+        "honeycrisp_apple": 2
+      },
+      "actual": {
+        "honeycrisp_apple": 2
+      },
+      "passed": true
+    },
+    {
+      "name": "potato_long_pantry",
+      "expected": {
+        "potato_raw": 1
+      },
+      "actual": {
+        "potato_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "celery_two_weeks",
+      "expected": {
+        "celery_raw": 1
+      },
+      "actual": {
+        "celery_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "ny_steak_within_window",
+      "expected": {
+        "ny_strip_steak_raw": 1
+      },
+      "actual": {
+        "ny_strip_steak_raw": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed_basket",
+      "expected": {
+        "honeycrisp_apple": 1,
+        "spinach_raw": 1,
+        "salt": 1
+      },
+      "actual": {
+        "honeycrisp_apple": 1,
+        "spinach_raw": 1,
+        "salt": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed_basket_after_spinach_expires",
+      "expected": {
+        "honeycrisp_apple": 1,
+        "salt": 1
+      },
+      "actual": {
+        "honeycrisp_apple": 1,
+        "salt": 1
+      },
+      "passed": true
+    },
+    {
+      "name": "empty_pantry",
+      "expected": {},
+      "actual": {},
+      "passed": true
+    },
+    {
+      "name": "fuji_lasts_longer_than_honeycrisp",
+      "expected": {
+        "fuji_apple": 1
+      },
+      "actual": {
+        "fuji_apple": 1
+      },
+      "passed": true
+    }
+  ]
+}
