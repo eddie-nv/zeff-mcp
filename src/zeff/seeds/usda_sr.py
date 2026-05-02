@@ -238,6 +238,10 @@ def pick_canonical_parent(
             return "cheese"
         if desc_low.startswith(("yogurt", "kefir", "buttermilk", "sour cream")):
             return "cultured_dairy"
+        # USDA writes "Cream, sour, cultured" — head is "Cream", not "Sour".
+        # Treat any cream row tagged "sour" or "cultured" as cultured_dairy.
+        if desc_low.startswith("cream") and ("sour" in desc_low or "cultured" in desc_low):
+            return "cultured_dairy"
         return "milk_product"
 
     # Refine grain into whole vs refined.
