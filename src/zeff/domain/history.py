@@ -18,10 +18,10 @@ from __future__ import annotations
 import re
 from datetime import UTC, datetime, timedelta
 from enum import StrEnum
-from typing import Annotated, Any
+from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
-from sqlalchemy import func, select, text
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from zeff.db.models import IngestRecord, Node, NodeFacet
@@ -77,14 +77,11 @@ class HistoryResult(BaseModel):
     as_of: datetime
     since: datetime
     total_records: int
-    groups: Annotated[list[HistoryGroup], Field(default_factory=list)]
-    events: Annotated[
-        list[HistoryEvent],
-        Field(
-            default_factory=list,
-            description="Populated only when group_by='none'.",
-        ),
-    ]
+    groups: list[HistoryGroup] = Field(default_factory=list)
+    events: list[HistoryEvent] = Field(
+        default_factory=list,
+        description="Populated only when group_by='none'.",
+    )
 
 
 # Recursive ancestor chain → top-level category. Returns the child of 'food'
@@ -222,7 +219,3 @@ async def get_consumption_history(
         key=lambda g: (-g.record_count, g.key),
     )
     return base.model_copy(update={"groups": groups})
-
-
-# Avoid import-cycle hint for type checkers.
-_ = func  # ensures `func` import isn't dropped if rules change later
