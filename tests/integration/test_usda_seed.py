@@ -26,9 +26,7 @@ def usda_fixture_dir(tmp_path: Path) -> Path:
     target = tmp_path / "sr_legacy"
     target.mkdir()
     (target / "food.csv").write_bytes((FIXTURES / "usda_food.csv").read_bytes())
-    (target / "food_category.csv").write_bytes(
-        (FIXTURES / "usda_food_category.csv").read_bytes()
-    )
+    (target / "food_category.csv").write_bytes((FIXTURES / "usda_food_category.csv").read_bytes())
     return target
 
 
@@ -65,7 +63,16 @@ class TestEndToEndSeed:
         # The 19 canonical categories must exist.
         cats = (await db_session.execute(select(Node.id).where(Node.type == "category"))).all()
         ids = {r.id for r in cats}
-        for required in ("food", "fruit", "vegetable", "poultry", "red_meat", "seafood", "egg", "cheese"):
+        for required in (
+            "food",
+            "fruit",
+            "vegetable",
+            "poultry",
+            "red_meat",
+            "seafood",
+            "egg",
+            "cheese",
+        ):
             assert required in ids
 
     async def test_dairy_egg_split_works(self, db_session, usda_fixture_dir) -> None:
