@@ -13,6 +13,7 @@ from typing import Annotated, Any
 from mcp.server import FastMCP
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import select, text
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from zeff.db import connection as db_conn
 from zeff.db.models import Node, NodeExternalId, NodeFacet
@@ -69,7 +70,7 @@ _PARENTS_SQL = text(
 )
 
 
-async def _load_food(session, node_id: str) -> FoodResult:
+async def _load_food(session: AsyncSession, node_id: str) -> FoodResult:
     node = await session.get(Node, node_id)
     if node is None:
         raise FoodNotFoundError(f"node {node_id!r} not found")
