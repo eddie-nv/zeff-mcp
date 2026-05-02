@@ -46,9 +46,11 @@ def register_tools(server: FastMCP) -> None:
     Imports are lazy so a test that wants to register only a subset can
     easily fork this function.
     """
+    from zeff.mcp.tools.get_food import register as register_get_food
     from zeff.mcp.tools.search_foods import register as register_search_foods
 
     register_search_foods(server)
+    register_get_food(server)
 
 
 async def _amain() -> None:
