@@ -36,11 +36,22 @@ downgrade: ## Roll back one migration
 revision: ## Create a new alembic revision: `make revision m="add x table"`
 	$(ALEMBIC) revision -m "$(m)"
 
-seed: ## Run the canonical seed (M1+)
+seed: ## Run all seeds in order (canonical, USDA, facets)
+	$(PY) -m zeff.seeds.canonical
+	$(PY) -m zeff.seeds.usda_sr
+	$(PY) -m zeff.seeds.facets
+
+seed-canonical: ## Seed only the canonical category tree
 	$(PY) -m zeff.seeds.canonical
 
+seed-usda: ## Seed only the USDA SR Legacy primitives
+	$(PY) -m zeff.seeds.usda_sr
+
+seed-facets: ## Compute and upsert facets for every primitive
+	$(PY) -m zeff.seeds.facets
+
 eval: ## Run all eval runners (M2+)
-	$(PY) -m evals.runners.run_search_eval
+	$(PY) -m evals.runners.run_search_eval --no-seed
 	$(PY) -m evals.runners.run_taxonomy_eval
 
 db-up: ## Start local Postgres

@@ -2,6 +2,39 @@
 
 Append-only log. Each milestone that runs an eval records its numbers here.
 
+## M4 — Taxonomy correctness (2026-05-02)
+
+**Dataset:** `evals/datasets/taxonomy_truth.jsonl` (116 hand-curated entries)
+**DB:** 20 categories + 499 primitives + 5 facets per primitive (2,495 facet rows)
+**Run:** `python -m evals.runners.run_taxonomy_eval`
+
+| Metric            | Value | Threshold |
+|-------------------|------:|----------:|
+| Parent accuracy   | 1.000 |     1.000 |
+| Mean facet acc.   | 1.000 |    ≥0.950 |
+
+By facet (across 116 entries):
+
+| Facet            | Correct | Total | Accuracy |
+|------------------|--------:|------:|---------:|
+| nova_group       |     116 |   116 |    1.000 |
+| dietary_flags    |     116 |   116 |    1.000 |
+| allergens        |     116 |   116 |    1.000 |
+| requires_cooking |     116 |   116 |    1.000 |
+| decay            |      11 |    11 |    1.000 |
+
+Approach: pure-function rules in `seeds/facet_rules.py` with hand-curated
+overrides (`DECAY_BY_NODE`, `ALLERGEN_OVERRIDES_BY_NODE`,
+`NEEDS_COOKING_NODE_IDS`). 71 unit tests guard the rules. Iterated from
+0% → 95.4% → 99.4% → 100% across three rule fixes:
+1. Recursive parent resolution for dietary_flags (apple → fruit chain)
+2. NOVA-3 token expansion (fried, noodles, couscous, eggnog) + NOVA-2 flour
+3. requires_cooking: red_meat default→needs cook (steak override),
+   plant_protein nut allowlist, grain default→needs cook (flour/bran override),
+   "uncooked" no longer matches "cooked" prefix
+
+---
+
 ## M3.6 — Search after adding 20 USDA-derived cases (2026-05-02)
 
 **Dataset:** 62 cases (42 original + 20 drawn from the seeded USDA data)

@@ -55,9 +55,9 @@
 {"node_id": "tofu_fried", "expected_parent": "plant_protein", "expected_facets": {"nova_group": 3, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": ["soy"], "requires_cooking": false}}
 {"node_id": "peanuts_virginia_raw", "expected_parent": "plant_protein", "expected_facets": {"nova_group": 1, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": ["peanuts"], "requires_cooking": false}}
 {"node_id": "nuts_almonds", "expected_parent": "plant_protein", "expected_facets": {"nova_group": 1, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": ["tree_nuts"], "requires_cooking": false}}
-{"node_id": "soy_flour_low_fat", "expected_parent": "plant_protein", "expected_facets": {"nova_group": 3, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": ["soy"], "requires_cooking": false}}
+{"node_id": "soy_flour_low_fat", "expected_parent": "plant_protein", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": ["soy"], "requires_cooking": false}}
 {"node_id": "vinegar_balsamic", "expected_parent": "seasoning", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
-{"node_id": "spices_mace_ground", "expected_parent": "seasoning", "expected_facets": {"nova_group": 1, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
+{"node_id": "spices_mace_ground", "expected_parent": "seasoning", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
 {"node_id": "oil_palm", "expected_parent": "fat_and_oil", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
 {"node_id": "oil_canola", "expected_parent": "fat_and_oil", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}
 {"node_id": "oil_avocado", "expected_parent": "fat_and_oil", "expected_facets": {"nova_group": 2, "dietary_flags": ["gluten_free", "vegan", "vegetarian"], "allergens": [], "requires_cooking": false}}

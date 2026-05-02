@@ -1,0 +1,4442 @@
+{
+  "n_entries": 116,
+  "parent_total": 116,
+  "parent_correct": 116,
+  "parent_accuracy": 1.0,
+  "facet_total": 475,
+  "facet_correct": 472,
+  "facet_accuracy": 0.9936842105263158,
+  "facet_breakdown": {
+    "allergens": {
+      "total": 116,
+      "correct": 116,
+      "accuracy": 1.0
+    },
+    "decay": {
+      "total": 11,
+      "correct": 11,
+      "accuracy": 1.0
+    },
+    "dietary_flags": {
+      "total": 116,
+      "correct": 116,
+      "accuracy": 1.0
+    },
+    "nova_group": {
+      "total": 116,
+      "correct": 115,
+      "accuracy": 0.9913793103448276
+    },
+    "requires_cooking": {
+      "total": 116,
+      "correct": 114,
+      "accuracy": 0.9827586206896551
+    }
+  },
+  "missing_nodes": [],
+  "parent_failures": [],
+  "cases": [
+    {
+      "node_id": "honeycrisp_apple",
+      "expected_parent": "apple",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "apple",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 60,
+            "pantry_days": 14
+          },
+          "actual": {
+            "pantry_days": 14,
+            "refrigerated_days": 60
+          }
+        }
+      }
+    },
+    {
+      "node_id": "fuji_apple",
+      "expected_parent": "apple",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "apple",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 90,
+            "pantry_days": 21
+          },
+          "actual": {
+            "pantry_days": 21,
+            "refrigerated_days": 90
+          }
+        }
+      }
+    },
+    {
+      "node_id": "spinach_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 7,
+            "frozen_days": 240
+          },
+          "actual": {
+            "frozen_days": 240,
+            "refrigerated_days": 7
+          }
+        }
+      }
+    },
+    {
+      "node_id": "celery_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 14,
+            "frozen_days": 365
+          },
+          "actual": {
+            "frozen_days": 365,
+            "refrigerated_days": 14
+          }
+        }
+      }
+    },
+    {
+      "node_id": "potato_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "pantry_days": 30,
+            "refrigerated_days": 90
+          },
+          "actual": {
+            "pantry_days": 30,
+            "refrigerated_days": 90
+          }
+        }
+      }
+    },
+    {
+      "node_id": "chicken_breast_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 2,
+            "frozen_days": 270
+          },
+          "actual": {
+            "frozen_days": 270,
+            "refrigerated_days": 2
+          }
+        }
+      }
+    },
+    {
+      "node_id": "chicken_whole_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 2,
+            "frozen_days": 365
+          },
+          "actual": {
+            "frozen_days": 365,
+            "refrigerated_days": 2
+          }
+        }
+      }
+    },
+    {
+      "node_id": "chicken_leg_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 2,
+            "frozen_days": 270
+          },
+          "actual": {
+            "frozen_days": 270,
+            "refrigerated_days": 2
+          }
+        }
+      }
+    },
+    {
+      "node_id": "salt",
+      "expected_parent": "seasoning",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seasoning",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "pantry_days": 1825
+          },
+          "actual": {
+            "pantry_days": 1825
+          }
+        }
+      }
+    },
+    {
+      "node_id": "salmon_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 2,
+            "frozen_days": 90
+          },
+          "actual": {
+            "frozen_days": 90,
+            "refrigerated_days": 2
+          }
+        }
+      }
+    },
+    {
+      "node_id": "ny_strip_steak_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        },
+        "decay": {
+          "ok": true,
+          "expected": {
+            "refrigerated_days": 4,
+            "frozen_days": 365
+          },
+          "actual": {
+            "frozen_days": 365,
+            "refrigerated_days": 4
+          }
+        }
+      }
+    },
+    {
+      "node_id": "arugula_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "garlic_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "onions_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "tomatillos_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "carrots_baby_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cabbage_savoy_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "seaweed_kelp_raw",
+      "expected_parent": "vegetable",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "vegetable",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "blueberries_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "blackberries_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "raspberries_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "mangos_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "jackfruit_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "plums_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "longans_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "lemon_juice_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "limes_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cranberries_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "apricots_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "bananas_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "kumquats_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "elderberries_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "feijoa_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "figs_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cherimoya_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "loquats_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "breadfruit_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "candied_fruit",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "dates_medjool",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "litchis_dried",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "litchis_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "longans_dried",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "crabapples_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "lemon_peel_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "lime_juice_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "abiyuch_raw",
+      "expected_parent": "fruit",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fruit",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cheese_cheshire",
+      "expected_parent": "cheese",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cheese",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cheese_edam",
+      "expected_parent": "cheese",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cheese",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cheese_caraway",
+      "expected_parent": "cheese",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cheese",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "cream_sour_cultured",
+      "expected_parent": "cultured_dairy",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cultured_dairy",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "yogurt_plain_whole_milk",
+      "expected_parent": "cultured_dairy",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cultured_dairy",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "yogurt_plain_low_fat",
+      "expected_parent": "cultured_dairy",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cultured_dairy",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "sour_cream_light",
+      "expected_parent": "cultured_dairy",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cultured_dairy",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "kefir_lowfat_plain_lifeway",
+      "expected_parent": "cultured_dairy",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "cultured_dairy",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "milk"
+          ],
+          "actual": [
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "tofu_fried",
+      "expected_parent": "plant_protein",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "plant_protein",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "soy"
+          ],
+          "actual": [
+            "soy"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "peanuts_virginia_raw",
+      "expected_parent": "plant_protein",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "plant_protein",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "peanuts"
+          ],
+          "actual": [
+            "peanuts"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "nuts_almonds",
+      "expected_parent": "plant_protein",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "plant_protein",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "tree_nuts"
+          ],
+          "actual": [
+            "tree_nuts"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "soy_flour_low_fat",
+      "expected_parent": "plant_protein",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "plant_protein",
+      "facet_results": {
+        "nova_group": {
+          "ok": false,
+          "expected": 2,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "soy"
+          ],
+          "actual": [
+            "soy"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "vinegar_balsamic",
+      "expected_parent": "seasoning",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seasoning",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "spices_mace_ground",
+      "expected_parent": "seasoning",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seasoning",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_palm",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_canola",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_avocado",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_coconut",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_walnut",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "tree_nuts"
+          ],
+          "actual": [
+            "tree_nuts"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_almond",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "tree_nuts"
+          ],
+          "actual": [
+            "tree_nuts"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "oil_hazelnut",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "tree_nuts"
+          ],
+          "actual": [
+            "tree_nuts"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "lard",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fat_chicken",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fat_goose",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_oil_salmon",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_oil_cod_liver",
+      "expected_parent": "fat_and_oil",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "fat_and_oil",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 2,
+          "actual": 2
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "beverages_water_tap_drinking",
+      "expected_parent": "beverage",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "beverage",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "beverages_water_tap_well",
+      "expected_parent": "beverage",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "beverage",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "beverages_tea_oolong_brewed",
+      "expected_parent": "beverage",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "beverage",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_bluefish_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_carp_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_bass_striped_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_monkfish_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_burbot_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "fish_cod_atlantic_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "fish"
+          ],
+          "actual": [
+            "fish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "mollusks_snail_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "pescatarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "pescatarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "shellfish"
+          ],
+          "actual": [
+            "shellfish"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "frog_legs_raw",
+      "expected_parent": "seafood",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "seafood",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "chicken_ground_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "chicken_feet_boiled",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "turkey_ground_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "guinea_hen_meat_only_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "ostrich_fan_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "emu_full_rump_raw",
+      "expected_parent": "poultry",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "poultry",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "veal_breast_separable_fat_cooked",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "veal_loin_separable_lean_and_fat_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "veal_shank_separable_lean_and_fat_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "lamb_ground_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "game_meat_horse_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "game_meat_goat_raw",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "game_meat_antelope_cooked_roasted",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "beef_cured_corned_beef_brisket_cooked",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "pork_cured_bacon_cooked_baked",
+      "expected_parent": "red_meat",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "red_meat",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free"
+          ],
+          "actual": [
+            "gluten_free"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "barley_hulled",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "buckwheat",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "millet_raw",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "millet_cooked",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "quinoa_cooked",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "wild_rice_raw",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "spelt_cooked",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "spelt_uncooked",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": false,
+          "expected": true,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "rye_grain",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "bulgur_cooked",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "bulgur_dry",
+      "expected_parent": "whole_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "whole_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "wheat_durum",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 1,
+          "actual": 1
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "couscous_cooked",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "couscous_dry",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "wheat"
+          ],
+          "actual": [
+            "wheat"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "rice_noodles_dry",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": false,
+          "expected": true,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "tapioca_pearl_dry",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      }
+    },
+    {
+      "node_id": "cornstarch",
+      "expected_parent": "refined_grain",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "refined_grain",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegan",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [],
+          "actual": []
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    },
+    {
+      "node_id": "eggnog",
+      "expected_parent": "egg",
+      "missing": false,
+      "parent_ok": true,
+      "actual_parent": "egg",
+      "facet_results": {
+        "nova_group": {
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        },
+        "dietary_flags": {
+          "ok": true,
+          "expected": [
+            "gluten_free",
+            "vegetarian"
+          ],
+          "actual": [
+            "gluten_free",
+            "vegetarian"
+          ]
+        },
+        "allergens": {
+          "ok": true,
+          "expected": [
+            "egg",
+            "milk"
+          ],
+          "actual": [
+            "egg",
+            "milk"
+          ]
+        },
+        "requires_cooking": {
+          "ok": true,
+          "expected": false,
+          "actual": false
+        }
+      }
+    }
+  ],
+  "timestamp": "2026-05-02T14:07:49.177044+00:00",
+  "thresholds": {
+    "parent": 1.0,
+    "facet": 0.95
+  }
+}
