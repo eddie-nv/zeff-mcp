@@ -115,6 +115,37 @@ _WHOLE_GRAIN_TOKENS = {
 }
 _SLUG_RE = re.compile(r"[^a-z0-9]+")
 
+# Heads that, when first in a comma-delimited USDA description, are too
+# generic to be a useful pref_label. We combine with the next token to make
+# the label informative ("Fish, salmon, ..." → "Fish Salmon").
+_GENERIC_HEAD_TOKENS: frozenset[str] = frozenset(
+    {
+        "babyfood",
+        "beef",
+        "beverages",
+        "bread",
+        "cereal",
+        "cheese",
+        "chicken",
+        "cream",
+        "egg",
+        "fast foods",
+        "fat",
+        "fish",
+        "frankfurter",
+        "game meat",
+        "lamb",
+        "milk",
+        "nuts",
+        "oil",
+        "ostrich",
+        "pork",
+        "soup",
+        "veal",
+        "yogurt",
+    }
+)
+
 
 @dataclass(frozen=True)
 class ParsedFood:
@@ -138,6 +169,24 @@ def slugify_description(desc: str) -> str:
     if not s[0].isalpha():
         s = f"x_{s}"
     return s
+
+
+def derive_pref_label(desc: str) -> str:
+    """Pick a useful pref_label from a USDA description.
+
+    USDA descriptions go broad → specific (`Fish, salmon, Atlantic, ...`).
+    Taking the first comma-token straight gives "Fish" — too generic for
+    search ranking. When the first token is a generic head (see
+    `_GENERIC_HEAD_TOKENS`), we combine with the next token so the label
+    becomes "Fish Salmon".
+    """
+    parts = [p.strip() for p in desc.split(",") if p.strip()]
+    if not parts:
+        return desc.strip().title() or desc
+    head = parts[0]
+    if head.lower() in _GENERIC_HEAD_TOKENS and len(parts) >= 2:
+        return f"{head} {parts[1]}".title()
+    return head.title()
 
 
 def derive_alt_labels(desc: str) -> list[str]:
@@ -248,7 +297,7 @@ def parse_foods(
                 counter += 1
             used_ids.add(node_id)
 
-            pref_label = desc.split(",", 1)[0].strip().title() or desc
+            pref_label = derive_pref_label(desc)
             by_parent[parent].append(
                 ParsedFood(
                     node_id=node_id,

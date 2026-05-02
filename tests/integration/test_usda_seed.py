@@ -96,7 +96,7 @@ class TestEndToEndSeed:
         # No baby food / fast food / Indian frybread.
         assert not any("Babyfood" in label for label in labels)
         assert not any("Fast Foods" in label for label in labels)
-        assert not any("Indian frybread" == label for label in labels)
+        assert not any(label == "Indian frybread" for label in labels)
 
     async def test_idempotent(self, db_session, usda_fixture_dir) -> None:
         await seed_usda_sr(db_session, usda_fixture_dir)

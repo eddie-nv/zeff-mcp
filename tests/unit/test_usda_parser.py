@@ -11,6 +11,7 @@ from zeff.seeds.usda_sr import (
     USDA_CATEGORY_MAP,
     ParsedFood,
     derive_alt_labels,
+    derive_pref_label,
     parse_categories,
     parse_foods,
     pick_canonical_parent,
@@ -50,6 +51,29 @@ class TestSlugify:
 
     def test_leading_digit_gets_letter_prefix(self) -> None:
         assert slugify_description("100% beef") == "x_100_beef"
+
+
+class TestDerivePrefLabel:
+    @pytest.mark.parametrize(
+        "desc,expected",
+        [
+            ("Apples, raw, with skin", "Apples"),
+            ("Spinach, raw", "Spinach"),
+            ("Salt, table, iodized", "Salt"),
+            # Generic heads combine with next token
+            ("Fish, salmon, Atlantic, wild, raw", "Fish Salmon"),
+            ("Cream, sour, cultured", "Cream Sour"),
+            ("Beverages, water, tap, drinking", "Beverages Water"),
+            ("Nuts, almonds", "Nuts Almonds"),
+            ("Cheese, mozzarella, low moisture, part-skim", "Cheese Mozzarella"),
+            ("Chicken, broilers or fryers, breast, meat only, raw", "Chicken Broilers Or Fryers"),
+            ("Beef, short loin, top loin steak, boneless", "Beef Short Loin"),
+            # Solo words
+            ("Eggnog", "Eggnog"),
+        ],
+    )
+    def test_pref_label(self, desc: str, expected: str) -> None:
+        assert derive_pref_label(desc) == expected
 
 
 class TestDeriveAltLabels:
