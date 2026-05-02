@@ -1,0 +1,660 @@
+{
+  "timestamp": "2026-05-02T13:45:13.641991+00:00",
+  "n_cases": 42,
+  "pass_count": 7,
+  "pass_rate": 0.16666666666666666,
+  "mean_recall_at_k": 0.16666666666666666,
+  "mrr": 0.16666666666666666,
+  "by_tag": {
+    "abbreviation": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "alt_label": {
+      "count": 20,
+      "pass_rate": 0.15,
+      "recall": 0.15
+    },
+    "alt_label_partial": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "alt_label_scientific": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "ambiguous": {
+      "count": 2,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "exact_case_insensitive": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "exact_label": {
+      "count": 9,
+      "pass_rate": 0.2222222222222222,
+      "recall": 0.2222222222222222
+    },
+    "no_match": {
+      "count": 1,
+      "pass_rate": 1.0,
+      "recall": 1.0
+    },
+    "plural": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "qualifier_word": {
+      "count": 1,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "regional_name": {
+      "count": 2,
+      "pass_rate": 0.0,
+      "recall": 0.0
+    },
+    "typo": {
+      "count": 2,
+      "pass_rate": 0.5,
+      "recall": 0.5
+    }
+  },
+  "cases": [
+    {
+      "query": "honeycrisp apple",
+      "tag": "exact_label",
+      "expected": [
+        "honeycrisp_apple"
+      ],
+      "got": [
+        "rose_apples_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "Honeycrisp Apple",
+      "tag": "exact_case_insensitive",
+      "expected": [
+        "honeycrisp_apple"
+      ],
+      "got": [
+        "rose_apples_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "honeycrisp",
+      "tag": "alt_label",
+      "expected": [
+        "honeycrisp_apple"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "hc apple",
+      "tag": "abbreviation",
+      "expected": [
+        "honeycrisp_apple"
+      ],
+      "got": [
+        "rose_apples_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "fuji",
+      "tag": "alt_label",
+      "expected": [
+        "fuji_apple"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "fuji apple",
+      "tag": "exact_label",
+      "expected": [
+        "fuji_apple"
+      ],
+      "got": [
+        "rose_apples_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "spinach",
+      "tag": "exact_label",
+      "expected": [
+        "spinach_raw"
+      ],
+      "got": [
+        "spinach_raw",
+        "spinach_souffle",
+        "spices_anise_seed"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "baby spinach",
+      "tag": "alt_label",
+      "expected": [
+        "spinach_raw"
+      ],
+      "got": [
+        "spinach_raw",
+        "spinach_souffle",
+        "carrots_baby_raw"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "spinch",
+      "tag": "typo",
+      "expected": [
+        "spinach_raw"
+      ],
+      "got": [
+        "spinach_raw",
+        "spinach_souffle",
+        "spices_anise_seed"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "spinach leaves",
+      "tag": "alt_label",
+      "expected": [
+        "spinach_raw"
+      ],
+      "got": [
+        "spinach_raw",
+        "spinach_souffle",
+        "taro_leaves_raw"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "celery",
+      "tag": "exact_label",
+      "expected": [
+        "celery_raw"
+      ],
+      "got": [
+        "celery_raw",
+        "celeriac_raw",
+        "celtuce_raw"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "celery sticks",
+      "tag": "alt_label",
+      "expected": [
+        "celery_raw"
+      ],
+      "got": [
+        "celery_raw",
+        "celeriac_raw"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    },
+    {
+      "query": "potato",
+      "tag": "exact_label",
+      "expected": [
+        "potato_raw"
+      ],
+      "got": [
+        "potatoes_raw_skin",
+        "potato_flour",
+        "potato_pancakes"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "potatoes",
+      "tag": "plural",
+      "expected": [
+        "potato_raw"
+      ],
+      "got": [
+        "potatoes_raw_skin",
+        "potato_pancakes",
+        "potato_flour"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "white potato",
+      "tag": "alt_label",
+      "expected": [
+        "potato_raw"
+      ],
+      "got": [
+        "corn_grain_white",
+        "potatoes_raw_skin",
+        "potato_flour"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "chicken breast",
+      "tag": "exact_label",
+      "expected": [
+        "chicken_breast_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "chicken_feet_boiled",
+        "chicken_patty_frozen_cooked"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "boneless skinless chicken breast",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_breast_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "chicken_feet_boiled",
+        "chicken_patty_frozen_cooked"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "raw chicken breast",
+      "tag": "qualifier_word",
+      "expected": [
+        "chicken_breast_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "quail_breast_meat_only_raw",
+        "chicken_feet_boiled"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "whole chicken",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_whole_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "chicken_feet_boiled",
+        "chicken_patty_frozen_cooked"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "roaster",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_whole_raw"
+      ],
+      "got": [
+        "game_meat_deer_cooked_roasted",
+        "game_meat_beaver_cooked_roasted",
+        "game_meat_elk_cooked_roasted"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "fryer",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_whole_raw"
+      ],
+      "got": [
+        "tofu_fried",
+        "basil_fresh",
+        "fruit"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "chicken legs",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_leg_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "chicken_feet_boiled",
+        "chicken_patty_frozen_cooked"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "drumstick",
+      "tag": "alt_label_partial",
+      "expected": [
+        "chicken_leg_raw"
+      ],
+      "got": [
+        "emu_inside_drum_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "leg quarter",
+      "tag": "alt_label",
+      "expected": [
+        "chicken_leg_raw"
+      ],
+      "got": [
+        "quail_breast_meat_only_raw",
+        "quail_cooked_total_edible",
+        "quail_meat_and_skin_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "salt",
+      "tag": "exact_label",
+      "expected": [
+        "salt"
+      ],
+      "got": [
+        "salt_table",
+        "butter_salted",
+        "butter_whipped_with_salt"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "table salt",
+      "tag": "alt_label",
+      "expected": [
+        "salt"
+      ],
+      "got": [
+        "salt_table",
+        "alcoholic_beverage_wine_table_all",
+        "alcoholic_beverage_wine_table_red"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "kosher salt",
+      "tag": "alt_label",
+      "expected": [
+        "salt"
+      ],
+      "got": [
+        "salt_table",
+        "butter_salted",
+        "butter_without_salt"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "sodium chloride",
+      "tag": "alt_label_scientific",
+      "expected": [
+        "salt"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "sea salt",
+      "tag": "alt_label",
+      "expected": [
+        "salt"
+      ],
+      "got": [
+        "salt_table",
+        "butter_salted",
+        "butter_without_salt"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "salmon",
+      "tag": "exact_label",
+      "expected": [
+        "salmon_raw"
+      ],
+      "got": [
+        "fish_oil_salmon",
+        "fish_salmon_chum_raw",
+        "fish_salmon_pink_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "fresh salmon",
+      "tag": "alt_label",
+      "expected": [
+        "salmon_raw"
+      ],
+      "got": [
+        "fish_salmon_chum_raw",
+        "fish_salmon_pink_raw",
+        "fish_oil_salmon"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "salmon fillet",
+      "tag": "alt_label",
+      "expected": [
+        "salmon_raw"
+      ],
+      "got": [
+        "fish_salmon_chum_raw",
+        "fish_salmon_pink_raw",
+        "fish_oil_salmon"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "salmn",
+      "tag": "typo",
+      "expected": [
+        "salmon_raw"
+      ],
+      "got": [
+        "fish_oil_salmon",
+        "salt_table",
+        "butter_salted"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "ny strip steak",
+      "tag": "exact_label",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [
+        "fish_bass_striped_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "ny steak",
+      "tag": "alt_label",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "new york strip",
+      "tag": "alt_label",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [
+        "fish_bass_striped_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "strip steak",
+      "tag": "alt_label",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [
+        "fish_bass_striped_raw",
+        "beef_cured_breakfast_strips_cooked"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "kansas city strip",
+      "tag": "regional_name",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "ambassador steak",
+      "tag": "regional_name",
+      "expected": [
+        "ny_strip_steak_raw"
+      ],
+      "got": [],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "apple",
+      "tag": "ambiguous",
+      "expected": [
+        "honeycrisp_apple",
+        "fuji_apple"
+      ],
+      "got": [
+        "rose_apples_raw",
+        "crabapples_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "chicken",
+      "tag": "ambiguous",
+      "expected": [
+        "chicken_breast_raw",
+        "chicken_whole_raw",
+        "chicken_leg_raw"
+      ],
+      "got": [
+        "fat_chicken",
+        "chicken_feet_boiled",
+        "chicken_patty_frozen_cooked",
+        "chicken_ground_raw",
+        "chives_raw"
+      ],
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "passed": false
+    },
+    {
+      "query": "xyzzy_no_match",
+      "tag": "no_match",
+      "expected": [],
+      "got": [],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "passed": true
+    }
+  ]
+}
