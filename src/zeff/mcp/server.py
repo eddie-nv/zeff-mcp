@@ -49,12 +49,14 @@ def register_tools(server: FastMCP) -> None:
     from zeff.mcp.tools.browse_category import register as register_browse_category
     from zeff.mcp.tools.get_food import register as register_get_food
     from zeff.mcp.tools.get_food_components import register as register_get_food_components
+    from zeff.mcp.tools.get_pantry_state import register as register_get_pantry_state
     from zeff.mcp.tools.search_foods import register as register_search_foods
 
     register_search_foods(server)
     register_get_food(server)
     register_browse_category(server)
     register_get_food_components(server)
+    register_get_pantry_state(server)
 
 
 async def _amain() -> None:

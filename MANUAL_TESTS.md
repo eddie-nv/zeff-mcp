@@ -87,6 +87,20 @@ Last run: 2026-05-02. All 5 passed.
 
 Last run: 2026-05-02. All 6 passed.
 
+## M8 — `get_pantry_state` smoke checks (2026-05-02)
+
+Setup: insert three records under `smoke_alice` — `honeycrisp_apple` 5d
+ago, `spinach_raw` 4d ago, `salt` 60d ago.
+
+| Query                                | Expected response                                                          |
+|--------------------------------------|----------------------------------------------------------------------------|
+| `{user_id: smoke_alice}`             | 3 items: spinach (~2d left, refrigerated), honeycrisp (~54d, refrigerated), salt (~1764d, pantry) |
+| `{user_id: smoke_nobody}`            | empty list                                                                 |
+| `{user_id: alice, as_of: <past>}`    | items present (decay window has not yet kicked in)                          |
+| `{user_id: alice, as_of: <far future>}` | only items with no decay (e.g., long-shelf-life salt) remain             |
+
+Last run: 2026-05-02. All passed.
+
 ## Failure modes to watch
 
 - **DB unavailable:** the server will start but every `search_foods` call

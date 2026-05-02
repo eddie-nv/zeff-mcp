@@ -25,7 +25,9 @@ from sqlalchemy import (
     text,
 )
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import UUID as PgUUID
+from sqlalchemy.dialects.postgresql import (
+    UUID as PgUUID,  # noqa: N811 — pg-dialect type, not a constant
+)
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
