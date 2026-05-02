@@ -50,6 +50,30 @@ five queries below were verified against the M3+M4 seeded DB.
 
 Last run: 2026-05-02. All 5 passed.
 
+## M6 — `get_food` smoke checks (2026-05-02)
+
+| `node_id`            | Expected response                                                          |
+|----------------------|----------------------------------------------------------------------------|
+| `honeycrisp_apple`   | parents = `[apple, fruit, food]`, all 5 facets present                      |
+| `salmon_raw`         | parents = `[seafood, protein, food]`, allergens includes `fish`             |
+| `salt`               | parents = `[seasoning, food]`, nova_group=2, decay.pantry_days=1825         |
+| `fruit`              | type=`category`, parents = `[food]`, facets={} (categories carry no facets) |
+| `does_not_exist`     | Raises `ToolError` with the missing id in the message                       |
+
+Last run: 2026-05-02. All 5 passed.
+
+## M6 — `browse_category` smoke checks (2026-05-02)
+
+| `node_id`   | Expected response                                                            |
+|-------------|------------------------------------------------------------------------------|
+| `food`      | 8 children: beverage, dairy, fat_and_oil, fruit, grain, protein, seasoning, vegetable |
+| `protein`   | 5 children: egg, plant_protein, poultry, red_meat, seafood                   |
+| `fruit`     | ~51 children incl. `apple` with `child_count=2`                              |
+| `apple`     | 2 children: `fuji_apple`, `honeycrisp_apple` (child_count=0 each)            |
+| `<unknown>` | Raises `ToolError`                                                           |
+
+Last run: 2026-05-02. All 5 passed.
+
 ## Failure modes to watch
 
 - **DB unavailable:** the server will start but every `search_foods` call
