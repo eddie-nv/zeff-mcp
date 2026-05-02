@@ -25,6 +25,7 @@ import pytest
 import pytest_asyncio
 from alembic import command
 from alembic.config import Config
+from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from zeff.db import connection as db_conn
@@ -104,10 +105,21 @@ def _migrated_dsn(_ephemeral_db: tuple[str, str]) -> tuple[str, str]:
 
 @pytest_asyncio.fixture
 async def db_session(_migrated_dsn: tuple[str, str]) -> AsyncIterator[AsyncSession]:
-    """Yield a clean async session bound to the migrated ephemeral DB."""
+    """Yield a clean async session bound to the migrated ephemeral DB.
+
+    Each test gets a freshly-truncated DB. We TRUNCATE rather than DROP so we
+    keep the migrated schema across the test session (cheap), but isolate
+    state per test.
+    """
     _, async_dsn = _migrated_dsn
     db_conn.configure_engine(async_dsn)
     factory = db_conn._ensure_initialized()  # noqa: SLF001
+
+    async with db_conn.get_engine().begin() as conn:
+        await conn.execute(
+            text("TRUNCATE TABLE node_facets, node_external_ids, nodes RESTART IDENTITY CASCADE")
+        )
+
     session = factory()
     try:
         yield session
