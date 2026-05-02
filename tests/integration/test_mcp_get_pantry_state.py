@@ -47,11 +47,10 @@ async def server_and_seed(db_session, _migrated_dsn):
         ),
     )
     await queries.create_node(
-        db_session, Node(id="salt", type=NodeType.primitive, pref_label="Salt", parent_id="seasoning")
+        db_session,
+        Node(id="salt", type=NodeType.primitive, pref_label="Salt", parent_id="seasoning"),
     )
-    await queries.set_facet(
-        db_session, "spinach_raw", FacetKey.decay, {"refrigerated_days": 7}
-    )
+    await queries.set_facet(db_session, "spinach_raw", FacetKey.decay, {"refrigerated_days": 7})
     await queries.set_facet(db_session, "salt", FacetKey.decay, {"pantry_days": 1825})
 
     await queries.add_ingest_record(
@@ -84,9 +83,7 @@ class TestSchema:
         assert "get_pantry_state" in names
 
     async def test_input_schema(self, server_and_seed) -> None:
-        tool = next(
-            t for t in await server_and_seed.list_tools() if t.name == "get_pantry_state"
-        )
+        tool = next(t for t in await server_and_seed.list_tools() if t.name == "get_pantry_state")
         props = tool.inputSchema["properties"]
         assert "user_id" in props
         assert "as_of" in props
@@ -128,9 +125,7 @@ class TestCallTool:
 
     async def test_unknown_user_returns_empty(self, server_and_seed) -> None:
         payload = _decode(
-            await server_and_seed.call_tool(
-                "get_pantry_state", {"user_id": "nobody"}
-            )
+            await server_and_seed.call_tool("get_pantry_state", {"user_id": "nobody"})
         )
         assert payload["items"] == []
 
@@ -155,8 +150,6 @@ class TestCallTool:
 
     async def test_default_as_of_is_now(self, server_and_seed) -> None:
         # No as_of: salt was acquired 2026-01-01 and lasts 5 years; today is 2026-05-02.
-        payload = _decode(
-            await server_and_seed.call_tool("get_pantry_state", {"user_id": "alice"})
-        )
+        payload = _decode(await server_and_seed.call_tool("get_pantry_state", {"user_id": "alice"}))
         ids = [i["node_id"] for i in payload["items"]]
         assert "salt" in ids

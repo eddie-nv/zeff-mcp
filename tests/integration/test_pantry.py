@@ -27,7 +27,12 @@ async def _seed(db_session, *foods: tuple[str, str, dict | None]) -> None:
     for nid, parent, decay in foods:
         await queries.create_node(
             db_session,
-            Node(id=nid, type=NodeType.primitive, pref_label=nid.replace("_", " ").title(), parent_id=parent),
+            Node(
+                id=nid,
+                type=NodeType.primitive,
+                pref_label=nid.replace("_", " ").title(),
+                parent_id=parent,
+            ),
         )
         if decay is not None:
             await queries.set_facet(db_session, nid, FacetKey.decay, decay)
@@ -45,7 +50,9 @@ class TestSingleItem:
         )
         await db_session.commit()
 
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 5, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 5, tzinfo=UTC)
+        )
         assert len(items) == 1
         item = items[0]
         assert item.node_id == "spinach_raw"
@@ -62,7 +69,9 @@ class TestSingleItem:
             acquired_at=datetime(2026, 5, 1, tzinfo=UTC),
         )
         await db_session.commit()
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 9, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 9, tzinfo=UTC)
+        )
         assert items == []
 
     async def test_no_decay_treated_as_long_lived(self, db_session) -> None:
@@ -75,7 +84,9 @@ class TestSingleItem:
             acquired_at=datetime(2026, 5, 1, tzinfo=UTC),
         )
         await db_session.commit()
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2027, 5, 1, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2027, 5, 1, tzinfo=UTC)
+        )
         assert len(items) == 1
         assert items[0].estimated_expiration is None
         assert items[0].storage_mode is None
@@ -95,7 +106,9 @@ class TestSingleItem:
             acquired_at=datetime(2026, 5, 1, tzinfo=UTC),
         )
         await db_session.commit()
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 2, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 2, tzinfo=UTC)
+        )
         assert items[0].storage_mode == StorageMode.refrigerated
         assert items[0].estimated_expiration == datetime(2026, 5, 3, tzinfo=UTC)
 
@@ -109,7 +122,9 @@ class TestSingleItem:
             acquired_at=datetime(2026, 1, 1, tzinfo=UTC),
         )
         await db_session.commit()
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 1, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 1, tzinfo=UTC)
+        )
         assert items[0].storage_mode == StorageMode.pantry
         assert items[0].days_until_expiration > 1000
 
@@ -127,7 +142,9 @@ class TestMultipleAcquisitions:
             )
         await db_session.commit()
 
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 15, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 15, tzinfo=UTC)
+        )
         assert len(items) == 3
         assert all(i.node_id == "apple" for i in items)
         assert all(i.quantity == 2.0 for i in items)
@@ -137,14 +154,19 @@ class TestUserIsolation:
     async def test_alice_does_not_see_bobs_pantry(self, db_session) -> None:
         await _seed(db_session, ("apple", "fruit", {"refrigerated_days": 30}))
         await queries.add_ingest_record(
-            db_session, user_id="alice", node_id="apple", acquired_at=datetime(2026, 5, 1, tzinfo=UTC)
+            db_session,
+            user_id="alice",
+            node_id="apple",
+            acquired_at=datetime(2026, 5, 1, tzinfo=UTC),
         )
         await queries.add_ingest_record(
             db_session, user_id="bob", node_id="apple", acquired_at=datetime(2026, 5, 1, tzinfo=UTC)
         )
         await db_session.commit()
 
-        items = await compute_pantry_state(db_session, "alice", as_of=datetime(2026, 5, 5, tzinfo=UTC))
+        items = await compute_pantry_state(
+            db_session, "alice", as_of=datetime(2026, 5, 5, tzinfo=UTC)
+        )
         assert len(items) == 1
 
 

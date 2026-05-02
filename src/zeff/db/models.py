@@ -147,9 +147,7 @@ class IngestRecord(Base):
         ForeignKey("nodes.id", ondelete="RESTRICT"),
         nullable=False,
     )
-    acquired_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), nullable=False
-    )
+    acquired_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     quantity: Mapped[float | None] = mapped_column(Float, nullable=True)
     source: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(
