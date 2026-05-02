@@ -11,11 +11,14 @@ an invalid value even if a caller bypasses pydantic.
 
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Any
+from uuid import UUID
 
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from zeff.db.models import IngestRecord as IngestRow
 from zeff.db.models import Node as NodeRow
 from zeff.db.models import NodeComponent as ComponentRow
 from zeff.db.models import NodeExternalId as ExternalIdRow
@@ -99,6 +102,47 @@ async def add_component(
             is_primary=is_primary,
         )
     )
+
+
+async def add_ingest_record(
+    session: AsyncSession,
+    *,
+    user_id: str,
+    node_id: str,
+    acquired_at: datetime,
+    quantity: float | None = None,
+    source: str | None = None,
+    record_id: UUID | None = None,
+) -> IngestRow:
+    """Insert a single ingest record. Returns the populated row (id is server-generated)."""
+    row = IngestRow(
+        id=record_id,
+        user_id=user_id,
+        node_id=node_id,
+        acquired_at=acquired_at,
+        quantity=quantity,
+        source=source,
+    )
+    session.add(row)
+    return row
+
+
+async def list_ingest_records(
+    session: AsyncSession,
+    user_id: str,
+    *,
+    since: datetime | None = None,
+    until: datetime | None = None,
+) -> list[IngestRow]:
+    """Return user's ingest records, newest first, optionally bounded by acquired_at."""
+    stmt = select(IngestRow).where(IngestRow.user_id == user_id)
+    if since is not None:
+        stmt = stmt.where(IngestRow.acquired_at >= since)
+    if until is not None:
+        stmt = stmt.where(IngestRow.acquired_at <= until)
+    stmt = stmt.order_by(IngestRow.acquired_at.desc(), IngestRow.id)
+    rows = (await session.execute(stmt)).scalars()
+    return list(rows)
 
 
 async def get_components(session: AsyncSession, composite_id: str) -> list[ComponentRow]:

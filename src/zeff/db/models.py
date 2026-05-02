@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from typing import Any
+from uuid import UUID
 
 from sqlalchemy import (
     ARRAY,
@@ -24,6 +25,7 @@ from sqlalchemy import (
     text,
 )
 from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql import UUID as PgUUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -121,3 +123,35 @@ class NodeComponent(Base):
     grams_per_serving: Mapped[float | None] = mapped_column(Float, nullable=True)
     position: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
     is_primary: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=text("false"))
+
+
+class IngestRecord(Base):
+    __tablename__ = "ingest_records"
+    __table_args__ = (
+        CheckConstraint(
+            "quantity IS NULL OR quantity > 0",
+            name="ingest_records_quantity_check",
+        ),
+    )
+
+    id: Mapped[UUID] = mapped_column(
+        PgUUID(as_uuid=True),
+        primary_key=True,
+        server_default=text("gen_random_uuid()"),
+    )
+    user_id: Mapped[str] = mapped_column(Text, nullable=False)
+    node_id: Mapped[str] = mapped_column(
+        Text,
+        ForeignKey("nodes.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+    acquired_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+    quantity: Mapped[float | None] = mapped_column(Float, nullable=True)
+    source: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
